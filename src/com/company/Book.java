@@ -63,11 +63,15 @@ public class Book
         return isbn;
     }
 
-//    @Override
-//    public String toString()
-//    {
-//        return getTitle();
-//    }
+    @Override
+    public String toString()
+    {
+        return "Book ID: " + getBookId() + "\t" +
+                "Title: " + getTitle() + "\t" +
+                "Subtitle: " + getSubtitle() + "\t" +
+                "Author: " + getAuthor() + "\t" +
+                "ISBN: " + getIsbn() + "\t";
+    }
 
     //    private Book()
 //    {

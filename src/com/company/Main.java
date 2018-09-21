@@ -22,6 +22,7 @@ public class Main {
         });
 
         for(Book book : allBooks)
-            System.out.printf("%d - %s - %s - %s - %s\n", book.getBookId(), book.getTitle(), book.getSubtitle(), book.getAuthor(), book.getIsbn());
+            //System.out.printf("%d - %s - %s - %s - %s\n", book.getBookId(), book.getTitle(), book.getSubtitle(), book.getAuthor(), book.getIsbn());
+            System.out.println(book.toString());
     }
 }
