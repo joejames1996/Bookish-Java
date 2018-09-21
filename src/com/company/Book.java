@@ -11,7 +11,7 @@ public class Book
     private String author;
     private int isbn;
 
-    private static List<Book> bookList = new ArrayList<>();
+    private static List<Book> bookList = new ArrayList();
 
     public Book(int bookId, String title, String subtitle, String author, int isbn)
     {
