@@ -13,8 +13,9 @@ public class Main {
 
         List<Book> allBooks = jdbi.withHandle(new HandleCallback<List<Book>, Exception>() {
             public List<Book> withHandle(Handle handle) {
-//                handle.execute("INSERT INTO books(`title`, `subtitle`, `author`) VALUES ('This is another book', 'I went and did it again didnt I #madlad', 'A. Author')");
 //                handle.execute("INSERT INTO books(title, subtitle, author, isbn) VALUES (?, ?, ?, ?)", "Where's Wally", "30th Anniversary Edition", "Martin Handford", "9781406375695");
+//                handle.execute("DELETE FROM books WHERE bookId = 2");
+//                handle.execute("DELETE FROM books WHERE bookId = 3");
                 return handle.createQuery("SELECT * FROM books ORDER BY bookId")
                         .mapToBean(Book.class).list();
             }
