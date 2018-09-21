@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        String server = "server=localhost:3306;uid=root;pwd=zP0&3PF!i^GH;database=bookish";
-        Jdbi jdbi = Jdbi.create("jdbc:mysql://localhost:3306/bookish?user=root&password=4q1WIfvybxBN&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT&ssl=true");
+        //String server = "server=localhost:3306;uid=root;pwd=zP0&3PF!i^GH;database=bookish";
+        Jdbi jdbi = Jdbi.create("jdbc:mysql://10.210.11.106:3306/bookish?user=bookish&password=4q1WIfvybxBN&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT&ssl=true");
 
         List<Book> allBooks = jdbi.withHandle(new HandleCallback<List<Book>, Exception>() {
             public List<Book> withHandle(Handle handle) {
