@@ -8,6 +8,6 @@ public class Copy
     public Copy(int copyId, int bookId)
     {
         this.copyId = copyId;
-        this.book = Book.getBookFromId(bookId);
+//        this.book = Book.getBookFromId(bookId);
     }
 }

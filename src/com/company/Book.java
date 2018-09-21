@@ -13,8 +13,7 @@ public class Book
 
     private static List<Book> bookList = new ArrayList();
 
-    public Book(int bookId, String title, String subtitle, String author, int isbn)
-    {
+    public Book(int bookId, String title, String subtitle, String author, int isbn) {
         this.bookId = bookId;
         this.title = title;
         this.subtitle = subtitle;
@@ -22,24 +21,74 @@ public class Book
         this.isbn = isbn;
     }
 
-    private Book()
+    public void setBookId(int bookId)
     {
-
+        this.bookId = bookId;
     }
 
-    public static Book getBookFromId(int bookId)
+    public int getBookId()
     {
-        Book book = new Book();
-        for(Book b : bookList)
-        {
-            if(b.getBookId() == bookId)
-            {
-                book = b;
-                break;
-            }
-        }
-        return book;
+        return bookId;
     }
 
-    private int getBookId() { return this.bookId; }
+    public void setTitle(String title)
+    {
+        this.title = title;
+    }
+
+    public String getTitle()
+    {
+        return title;
+    }
+
+    public void setSubtitle(String subtitle)
+    {
+        this.subtitle = subtitle;
+    }
+
+    public String getSubtitle()
+    {
+        return subtitle;
+    }
+
+    public void setAuthor(String author)
+    {
+        this.author = author;
+    }
+
+    public String getAuthor()
+    {
+        return author;
+    }
+
+    public void setIsbn(int isbn)
+    {
+        this.isbn = isbn;
+    }
+
+    public int getIsbn()
+    {
+        return isbn;
+    }
+
+//    private Book()
+//    {
+//
+//    }
+//
+//    public static Book getBookFromId(int bookId)
+//    {
+//        Book book = new Book();
+//        for(Book b : bookList)
+//        {
+//            if(b.getBookId() == bookId)
+//            {
+//                book = b;
+//                break;
+//            }
+//        }
+//        return book;
+//    }
+//
+//    private int getBookId() { return this.bookId; }
 }
