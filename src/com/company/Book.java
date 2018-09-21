@@ -13,13 +13,13 @@ public class Book
 
     private static List<Book> bookList = new ArrayList();
 
-    public Book(int bookId, String title, String subtitle, String author, int isbn) {
+    /*public Book(int bookId, String title, String subtitle, String author, int isbn) {
         this.bookId = bookId;
         this.title = title;
         this.subtitle = subtitle;
         this.author = author;
         this.isbn = isbn;
-    }
+    }*/
 
     public void setBookId(int bookId)
     {
@@ -71,7 +71,13 @@ public class Book
         return isbn;
     }
 
-//    private Book()
+    @Override
+    public String toString()
+    {
+        return getTitle();
+    }
+
+    //    private Book()
 //    {
 //
 //    }

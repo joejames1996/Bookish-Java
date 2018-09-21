@@ -18,6 +18,7 @@ public class Main {
             }
         });
 
-        System.out.println(allBooks);
+        for(Book book : allBooks)
+            System.out.println(book);
     }
 }
