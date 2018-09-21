@@ -9,17 +9,9 @@ public class Book
     private String title;
     private String subtitle;
     private String author;
-    private int isbn;
+    private String isbn;
 
     private static List<Book> bookList = new ArrayList();
-
-    /*public Book(int bookId, String title, String subtitle, String author, int isbn) {
-        this.bookId = bookId;
-        this.title = title;
-        this.subtitle = subtitle;
-        this.author = author;
-        this.isbn = isbn;
-    }*/
 
     public void setBookId(int bookId)
     {
@@ -61,21 +53,21 @@ public class Book
         return author;
     }
 
-    public void setIsbn(int isbn)
+    public void setIsbn(String isbn)
     {
         this.isbn = isbn;
     }
 
-    public int getIsbn()
+    public String getIsbn()
     {
         return isbn;
     }
 
-    @Override
-    public String toString()
-    {
-        return getTitle();
-    }
+//    @Override
+//    public String toString()
+//    {
+//        return getTitle();
+//    }
 
     //    private Book()
 //    {

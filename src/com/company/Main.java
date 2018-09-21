@@ -9,16 +9,18 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws Exception {
         String server = "server=localhost:3306;uid=root;pwd=zP0&3PF!i^GH;database=bookish";
-        Jdbi jdbi = Jdbi.create("jdbc:mysql://localhost:3306/bookish?user=root&password=4q1WIfvybxBN&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT");
+        Jdbi jdbi = Jdbi.create("jdbc:mysql://localhost:3306/bookish?user=root&password=4q1WIfvybxBN&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT&ssl=true");
 
         List<Book> allBooks = jdbi.withHandle(new HandleCallback<List<Book>, Exception>() {
             public List<Book> withHandle(Handle handle) {
-                return handle.createQuery("SELECT * FROM books ORDER BY title")
+//                handle.execute("INSERT INTO books(`title`, `subtitle`, `author`) VALUES ('This is another book', 'I went and did it again didnt I #madlad', 'A. Author')");
+//                handle.execute("INSERT INTO books(title, subtitle, author, isbn) VALUES (?, ?, ?, ?)", "Where's Wally", "30th Anniversary Edition", "Martin Handford", "9781406375695");
+                return handle.createQuery("SELECT * FROM books ORDER BY bookId")
                         .mapToBean(Book.class).list();
             }
         });
 
         for(Book book : allBooks)
-            System.out.println(book);
+            System.out.printf("%d - %s - %s - %s - %s\n", book.getBookId(), book.getTitle(), book.getSubtitle(), book.getAuthor(), book.getIsbn());
     }
 }
